@@ -1,15 +1,443 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>HelloWorld</title>
-    <url>/2022/10/04/HelloWorld/</url>
-    <content><![CDATA[<p><strong>Hello world!</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>机器学习随记</title>
-    <url>/2022/10/07/ml%E9%9A%8F%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hsydec19.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="写在前面 学习吴恩达老师机器学习课程的一个随记，有参考其它笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习随记">
+<meta property="og:url" content="https://hsydec19.github.io/2022/10/07/ml%E9%9A%8F%E8%AE%B0/index.html">
+<meta property="og:site_name" content="HSYDEC19-BLOG">
+<meta property="og:description" content="写在前面 学习吴恩达老师机器学习课程的一个随记，有参考其它笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml0101/r.png">
+<meta property="og:image" content="https://hsydec19.github.io/r.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0102.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0103.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0201.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0202.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0203.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0204.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0205.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0206.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0207.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0301.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0302.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0303.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0304.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0401.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0402.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0403.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0404.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0405.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0406.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0407.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0408.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0409.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0410.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0411.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0412.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0413.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0501.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0502.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0503.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0504.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0505.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0506.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0601.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0602.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0603.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0604.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0605.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0606.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0701.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0702.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0703.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0802.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0801.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0803.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0804.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0805.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0806.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0901.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0902.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0903.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0904.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml0905.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1001.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1002.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1101.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1102.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1103.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1104.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1105.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1106.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1107.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1201.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1202.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1203.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1204.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1205.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1301.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1302.png">
+<meta property="og:image" content="https://hsydec19.github.io/images/ml/ml1401.png">
+<meta property="article:published_time" content="2022-10-07T07:36:16.000Z">
+<meta property="article:modified_time" content="2022-10-19T11:05:44.935Z">
+<meta property="article:author" content="hsydec19">
+<meta property="article:tag" content="机器学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hsydec19.github.io/images/ml0101/r.png">
+
+
+<link rel="canonical" href="https://hsydec19.github.io/2022/10/07/ml%E9%9A%8F%E8%AE%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hsydec19.github.io/2022/10/07/ml%E9%9A%8F%E8%AE%B0/","path":"2022/10/07/ml随记/","title":"机器学习随记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>机器学习随记 | HSYDEC19-BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HSYDEC19-BLOG</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D-Machine-Learning"><span class="nav-number">2.</span> <span class="nav-text">机器学习介绍 Machine Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">机器学习分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0-Supervised-Learning"><span class="nav-number">2.2.</span> <span class="nav-text">监督学习 Supervised Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0-Unsupervised-Learning"><span class="nav-number">2.3.</span> <span class="nav-text">无监督学习 Unsupervised Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80"><span class="nav-number">3.</span> <span class="nav-text">机器学习基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%8F%8F%E8%BF%B0"><span class="nav-number">3.1.</span> <span class="nav-text">模型描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5"><span class="nav-number">3.2.</span> <span class="nav-text">矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0-Cost-Function"><span class="nav-number">3.3.</span> <span class="nav-text">代价函数 Cost Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-number">3.4.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">3.4.1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="nav-number">3.4.2.</span> <span class="nav-text">学习率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%9B%B4%E8%A7%82%E6%84%9F%E5%8F%97"><span class="nav-number">3.4.3.</span> <span class="nav-text">一个直观感受</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-number">3.4.4.</span> <span class="nav-text">线性回归的梯度下降</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-number">4.</span> <span class="nav-text">多元线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92-1"><span class="nav-number">4.1.</span> <span class="nav-text">多元线性回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">多元梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3"><span class="nav-number">4.2.1.</span> <span class="nav-text">求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE"><span class="nav-number">4.2.2.</span> <span class="nav-text">特征缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%8E%87-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">学习率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%92%8C%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%9B%9E%E5%BD%92"><span class="nav-number">4.2.4.</span> <span class="nav-text">特征和多项式回归</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B"><span class="nav-number">4.3.</span> <span class="nav-text">正规方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B-1"><span class="nav-number">4.3.1.</span> <span class="nav-text">正规方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D-amp-%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B"><span class="nav-number">4.3.2.</span> <span class="nav-text">梯度下降 &amp; 正规方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B%E4%B8%8D%E5%8F%AF%E9%80%86"><span class="nav-number">4.3.3.</span> <span class="nav-text">正规方程不可逆</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%9B%9E%E5%BD%92-Logistics-Regression"><span class="nav-number">5.</span> <span class="nav-text">逻辑回归回归 Logistics Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C"><span class="nav-number">5.2.</span> <span class="nav-text">决策边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="nav-number">5.3.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.4.</span> <span class="nav-text">逻辑回归实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E4%BC%98%E5%8C%96"><span class="nav-number">5.5.</span> <span class="nav-text">高级优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%88%86%E7%B1%BB"><span class="nav-number">5.5.1.</span> <span class="nav-text">多分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">5.5.2.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98"><span class="nav-number">5.5.3.</span> <span class="nav-text">过拟合问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0-1"><span class="nav-number">5.5.4.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">5.5.5.</span> <span class="nav-text">线性回归的正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logistics%E5%9B%9E%E5%BD%92%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">5.5.6.</span> <span class="nav-text">Logistics回归的正则化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">6.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F-1"><span class="nav-number">6.1.</span> <span class="nav-text">形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">6.2.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0-2"><span class="nav-number">6.3.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95"><span class="nav-number">6.4.</span> <span class="nav-text">反向传播算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">6.4.1.</span> <span class="nav-text">前向传播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%EF%BC%88Backpropagation%EF%BC%89"><span class="nav-number">6.4.2.</span> <span class="nav-text">反向传播算法（Backpropagation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E6%A3%80%E6%B5%8B"><span class="nav-number">6.4.3.</span> <span class="nav-text">梯度检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">6.4.4.</span> <span class="nav-text">随机初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%B3%E7%90%86"><span class="nav-number">6.4.5.</span> <span class="nav-text">梳理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-Diagnostic"><span class="nav-number">7.</span> <span class="nav-text">机器学习 Diagnostic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0%E5%81%87%E8%AE%BE%E5%87%BD%E6%95%B0"><span class="nav-number">7.1.</span> <span class="nav-text">评估假设函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9%E5%92%8C%E8%AE%AD%E7%BB%83%E3%80%81%E9%AA%8C%E8%AF%81%E3%80%81%E6%B5%8B%E8%AF%95%E9%9B%86"><span class="nav-number">7.2.</span> <span class="nav-text">模型选择和训练、验证、测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8A%E6%96%AD%E5%81%8F%E5%B7%AE%E5%92%8C%E6%96%B9%E5%B7%AE"><span class="nav-number">7.3.</span> <span class="nav-text">诊断偏差和方差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96%E5%92%8C%E5%81%8F%E5%B7%AE"><span class="nav-number">7.4.</span> <span class="nav-text">正则化和偏差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E6%9B%B2%E7%BA%BF"><span class="nav-number">7.5.</span> <span class="nav-text">学习曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E4%B8%80%E6%AD%A5"><span class="nav-number">7.6.</span> <span class="nav-text">下一步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="nav-number">8.</span> <span class="nav-text">机器学习系统设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E5%A4%84%E7%90%86%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="nav-number">8.1.</span> <span class="nav-text">优先处理的工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90"><span class="nav-number">8.2.</span> <span class="nav-text">误差分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%AF%B9%E7%A7%B0%E6%80%A7%E5%88%86%E7%B1%BB%E7%9A%84%E8%AF%AF%E5%B7%AE%E8%AF%84%E4%BC%B0"><span class="nav-number">8.3.</span> <span class="nav-text">不对称性分类的误差评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E5%87%86%E5%BA%A6%E5%92%8C%E5%8F%AC%E5%9B%9E%E7%8E%87%E7%9A%84%E6%9D%83%E8%A1%A1"><span class="nav-number">8.4.</span> <span class="nav-text">精准度和召回率的权衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE"><span class="nav-number">8.5.</span> <span class="nav-text">数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA"><span class="nav-number">9.</span> <span class="nav-text">支持向量机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87"><span class="nav-number">9.1.</span> <span class="nav-text">优化目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E8%A7%82%E4%B8%8A%E7%90%86%E8%A7%A3%E6%9C%80%E5%A4%A7%E9%97%B4%E9%9A%94"><span class="nav-number">9.2.</span> <span class="nav-text">直观上理解最大间隔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="nav-number">9.3.</span> <span class="nav-text">数学原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%E6%9E%84%E9%80%A0%E5%A4%8D%E6%9D%82%E7%9A%84%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8"><span class="nav-number">9.4.</span> <span class="nav-text">支持向量机构造复杂的非线性分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%87%BD%E6%95%B0"><span class="nav-number">9.4.1.</span> <span class="nav-text">核函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8SVM"><span class="nav-number">9.4.2.</span> <span class="nav-text">使用SVM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="nav-number">10.</span> <span class="nav-text">无监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-means-%E7%AE%97%E6%B3%95"><span class="nav-number">10.1.</span> <span class="nav-text">K-means 算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%88%9D%E5%A7%8B%E5%8C%96-1"><span class="nav-number">10.2.</span> <span class="nav-text">随机初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E6%95%B0%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">10.3.</span> <span class="nav-text">聚类数的选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90"><span class="nav-number">11.</span> <span class="nav-text">主成分分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E8%A7%84%E5%88%92"><span class="nav-number">11.1.</span> <span class="nav-text">问题规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA-amp-amp-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-number">11.2.</span> <span class="nav-text">PCA &amp;&amp; 线性回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="nav-number">11.3.</span> <span class="nav-text">主成分分析算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E9%87%8D%E7%8E%B0"><span class="nav-number">11.4.</span> <span class="nav-text">压缩重现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E6%95%B0%E9%87%8F%E9%80%89%E6%8B%A9"><span class="nav-number">11.5.</span> <span class="nav-text">主成分数量选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8-PCA-%E5%BB%BA%E8%AE%AE"><span class="nav-number">11.6.</span> <span class="nav-text">应用 PCA 建议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B"><span class="nav-number">12.</span> <span class="nav-text">异常检测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%8A%A8%E6%9C%BA"><span class="nav-number">12.1.</span> <span class="nav-text">问题动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83"><span class="nav-number">12.2.</span> <span class="nav-text">高斯分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95"><span class="nav-number">12.3.</span> <span class="nav-text">异常检测算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E5%92%8C%E8%AF%84%E4%BC%B0%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F"><span class="nav-number">12.4.</span> <span class="nav-text">开发和评估异常检测系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-VS-%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="nav-number">12.5.</span> <span class="nav-text">异常检测 VS 监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E8%A6%81%E4%BD%BF%E7%94%A8%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-number">12.6.</span> <span class="nav-text">选择要使用的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%8F%98%E9%87%8F%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83"><span class="nav-number">12.7.</span> <span class="nav-text">多变量高斯分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E5%85%83%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83%E7%9A%84%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B"><span class="nav-number">12.8.</span> <span class="nav-text">使用多元高斯分布的异常检测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F"><span class="nav-number">13.</span> <span class="nav-text">推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95"><span class="nav-number">13.1.</span> <span class="nav-text">基于内容的推荐算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4-Collaborative-filtering"><span class="nav-number">13.2.</span> <span class="nav-text">协同过滤 Collaborative filtering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%8C%96%EF%BC%9A%E4%BD%8E%E7%A7%A9%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3"><span class="nav-number">13.3.</span> <span class="nav-text">矢量化：低秩矩阵分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%96%BD%E7%BB%86%E8%8A%82%EF%BC%9A%E5%9D%87%E5%80%BC%E8%A7%84%E8%8C%83%E5%8C%96"><span class="nav-number">13.4.</span> <span class="nav-text">实施细节：均值规范化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="nav-number">14.</span> <span class="nav-text">大规模机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-number">14.1.</span> <span class="nav-text">随机梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mini-batch-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-number">14.2.</span> <span class="nav-text">Mini-batch 梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%9A%84%E6%94%B6%E6%95%9B"><span class="nav-number">14.3.</span> <span class="nav-text">随机梯度下降的收敛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E5%AD%A6%E4%B9%A0"><span class="nav-number">14.4.</span> <span class="nav-text">在线学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%8F%E5%B0%91%E6%98%A0%E5%B0%84%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%B9%B6%E8%A1%8C"><span class="nav-number">14.5.</span> <span class="nav-text">减少映射与数据并行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A%E7%85%A7%E7%89%87%E5%85%89%E5%AD%A6%E5%AD%97%E7%AC%A6%E8%AF%86%E5%88%AB-OCR"><span class="nav-number">15.</span> <span class="nav-text">应用实例：照片光学字符识别 OCR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0%E5%92%8C%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-number">15.1.</span> <span class="nav-text">问题描述和流水线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-number">15.2.</span> <span class="nav-text">滑动窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">15.3.</span> <span class="nav-text">获取大量数据和人工数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E9%99%90%E5%88%86%E6%9E%90"><span class="nav-number">15.4.</span> <span class="nav-text">上限分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="nav-number">16.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="hsydec19"
+      src="/images/face1.jpg">
+  <p class="site-author-name" itemprop="name">hsydec19</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hsydec19.github.io/2022/10/07/ml%E9%9A%8F%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/face1.jpg">
+      <meta itemprop="name" content="hsydec19">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HSYDEC19-BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="机器学习随记 | HSYDEC19-BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习随记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-07 15:36:16" itemprop="dateCreated datePublished" datetime="2022-10-07T15:36:16+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-19 19:05:44" itemprop="dateModified" datetime="2022-10-19T19:05:44+08:00">2022-10-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
 <li>学习吴恩达老师机器学习课程的一个随记，有参考其它笔记。</li>
 </ul>
 <span id="more"></span>
@@ -297,7 +725,7 @@
 </li>
 </ul>
 <h3 id="反向传播算法（Backpropagation）"><a href="#反向传播算法（Backpropagation）" class="headerlink" title="反向传播算法（Backpropagation）"></a>反向传播算法（Backpropagation）</h3><ul>
-<li><p><a href="https://www.bilibili.com/video/BV16x411V7Qg">直观感受与数学原理 - 3B1B</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16x411V7Qg">直观感受与数学原理 - 3B1B</a></p>
 </li>
 <li><p>Sigmoid 求导 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="24.455ex" height="2.283ex" role="img" focusable="false" viewBox="0 -759 10808.9 1009"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g><g data-mml-node="mo" transform="translate(636,363) scale(0.707)"><path data-c="2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path></g></g><g data-mml-node="mo" transform="translate(880.5,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1269.5,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(1841.5,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(2508.2,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(3564,0)"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g><g data-mml-node="mo" transform="translate(4114,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(4503,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(5075,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(5686.2,0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g><g data-mml-node="mo" transform="translate(6408.5,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mn" transform="translate(6797.5,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(7519.7,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(8519.9,0)"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g><g data-mml-node="mo" transform="translate(9069.9,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(9458.9,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(10030.9,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(10419.9,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p>
 <p><img src="/images/ml/ml0504.png" width="85%" align="middle"></p>
@@ -507,7 +935,7 @@
 </li>
 <li><p>如何选择地标？通常 m 个样本 m 个地标，</p>
 </li>
-<li><p>补充：<a href="https://www.bilibili.com/video/BV13r4y1z7AG">支持向量机可视化+详解</a></p>
+<li><p>补充：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV13r4y1z7AG">支持向量机可视化+详解</a></p>
 </li>
 <li><p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.719ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 760 727"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g></g></g></svg></mjx-container> 与 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.28ex" height="1.912ex" role="img" focusable="false" viewBox="0 -833.9 1007.6 844.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D70E" d="M184 -11Q116 -11 74 34T31 147Q31 247 104 333T274 430Q275 431 414 431H552Q553 430 555 429T559 427T562 425T565 422T567 420T569 416T570 412T571 407T572 401Q572 357 507 357Q500 357 490 357T476 358H416L421 348Q439 310 439 263Q439 153 359 71T184 -11ZM361 278Q361 358 276 358Q152 358 115 184Q114 180 114 178Q106 141 106 117Q106 67 131 47T188 26Q242 26 287 73Q316 103 334 153T356 233T361 278Z"></path></g><g data-mml-node="mn" transform="translate(604,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g></svg></mjx-container> 的影响</p>
  <p><img src="/images/ml/ml0805.png" width="65%" align="middle"></p>
@@ -714,7 +1142,7 @@
 </li>
 <li><p>图像填补的两个应用：图像修复、协同过滤；</p>
 </li>
-<li><p><a href="https://blog.csdn.net/qq_33542428/article/details/106481508">完整参考</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33542428/article/details/106481508">完整参考</a></p>
 </li>
 </ul>
 </li>
@@ -810,9 +1238,91 @@
 <li><p>后续学习中会进行补充。</p>
 </li>
 </ul>
-]]></content>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-</search>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/alipay.jpg" alt="hsydec19 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/04/HelloWorld/" rel="prev" title="HelloWorld">
+                  <i class="fa fa-chevron-left"></i> HelloWorld
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="author" itemprop="copyrightHolder">hsydec19</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"per_page":false,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
